@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+<title>Stock prediction</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+ * {
+  box-sizing: border-box;
+ }
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Style the header */
+header {
+  background-color: #666;
+  padding: 30px;
+  text-align: center;
+  font-size: 35px;
+  color: white;
+}
+
+/* Create two columns/boxes that floats next to each other */
+nav {
+  float: left;
+  width: 30%;
+  height: 300px; /* only for demonstration, should be removed */
+  background: #ccc;
+  padding: 20px;
+}
+
+/* Style the list inside the menu */
+nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+article {
+  float: left;
+  padding: 20px;
+  width: 70%;
+  background-color: #f1f1f1;
+  height: 300px; /* only for demonstration, should be removed */
+}
+
+/* Clear floats after the columns */
+section:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Style the footer */
+footer {
+  background-color: #777;
+  padding: 10px;
+  text-align: center;
+  color: white;
+}
+
+/* Responsive layout - makes the two columns/boxes stack on top of each other instead of next to each other, on small screens */
+@media (max-width: 600px) {
+  nav, article {
+    width: 100%;
+    height: auto;
+  }
+}
+</style>
+
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  
+</head>
+
+<body>
+ <div class="login">
+	<header><h1>Predict Stock</h1></header>
+    <article>
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+    	<input type="text" name="Top1" placeholder="1" required="required" /><br/>
+        <input type="text" name="Top2" placeholder="2" required="required" /><br/>
+		<input type="text" name="Top3" placeholder="3" required="required" /><br/>
+		<input type="text" name="Top4" placeholder="4" required="required" /><br/>
+        <input type="text" name="Top5" placeholder="5" required="required" /><br/>
+        <input type="text" name="Top6" placeholder="6" required="required" /><br/>
+        <input type="text" name="Top7" placeholder="7" required="required" /><br/>
+        <input type="text" name="Top8" placeholder="8" required="required" /><br/>
+        <input type="text" name="Top9" placeholder="9" required="required" /><br/>
+        <input type="text" name="Top10" placeholder="10" required="required" /><br/>
+        <input type="text" name="Top11" placeholder="11" required="required" /><br/>
+        <input type="text" name="Top12" placeholder="12" required="required" /><br/>
+        <input type="text" name="Top13" placeholder="13" required="required" /><br/>
+        <input type="text" name="Top14" placeholder="14" required="required" /><br/>
+        <input type="text" name="Top15" placeholder="15" required="required" /><br/>
+        <input type="text" name="Top16" placeholder="16" required="required" /><br/>
+       
+        <input type="text" name="Top17" placeholder="17" required="required" /><br/>
+        <input type="text" name="Top18" placeholder="18" required="required" /><br/>
+        <input type="text" name="Top19" placeholder="19" required="required" /><br/>
+        <input type="text" name="Top20" placeholder="20" required="required" /><br/>
+        <input type="text" name="Top21" placeholder="21" required="required" /><br/>
+        <input type="text" name="Top22" placeholder="22" required="required" /><br/>
+        <input type="text" name="Top23" placeholder="23" required="required" /><br/>
+        <input type="text" name="Top24" placeholder="24" required="required" /><br/>
+        <input type="text" name="Top25" placeholder="25" required="required" /><br/>
+        
+		<br/>
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </article></form>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+
+ </div>
+
+
+</body>
+</html>
